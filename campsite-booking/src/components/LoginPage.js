@@ -4,6 +4,7 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
+
 const LoginPage = () => {
 
     const navigate = useNavigate();
@@ -48,7 +49,7 @@ const LoginPage = () => {
             .catch((err) => {
                 if (err.response) {
                     console.log(err);
-                    toast.error("Error: " + err.response.data.message);
+                    toast.error("Error: Invalid Email OR Password");
                 }
             });
     };
