@@ -41,7 +41,7 @@ const SignupPage = () => {
                 console.log(res.data);
                 if (res.data) {
                     toast.success("Signup Successfully");
-                    navigate("/", { replace: true }); // Redirect to home/login
+                    navigate("/login", { replace: true }); // Redirect to home/login
                 }
                 localStorage.setItem("Users", JSON.stringify(res.data.user));
             })
