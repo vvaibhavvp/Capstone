@@ -24,6 +24,11 @@ const BookingSchema = new Schema({
         type: mongoose.Decimal128,
         required: true
     },
+    booking_status: {
+        type: String,
+        enum: ['Confirmed', 'Pending', 'Cancelled'],
+        default: 'Pending'
+    },
     payment_status: {
         type: String,
         enum: ['Paid', 'Unpaid'],
