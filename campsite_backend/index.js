@@ -5,11 +5,6 @@ import cors from "cors";
 import userRoute from "./routes/user_route.js";
 
 const app = express();
-app.use(cors({
-  origin: '*',
-  method: ['GET', 'POST'],
-  credentials: true
-}));
 app.use(express.json());
 
 dotenv.config();
