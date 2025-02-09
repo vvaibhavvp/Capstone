@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../styles.css";
+import Navbar from "./Navbar";
 
 const HomePage = () => {
   return (
@@ -40,9 +40,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className="auth-links">
-        <Link to="./login">Login</Link> | <Link to="./signup">Sign Up</Link>
-      </div>
+      <Navbar />
     </div>
   );
 };

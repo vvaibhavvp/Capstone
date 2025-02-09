@@ -44,6 +44,9 @@ const LoginPage = () => {
                     toast.success("login Successfully");
                     navigate("/", { replace: true }); // Redirect to home/login
                 }
+                setTimeout(() => {
+                    window.location.reload();
+                  }, 1000);
                 localStorage.setItem("Users", JSON.stringify(res.data.user));
             })
             .catch((err) => {
