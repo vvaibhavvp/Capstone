@@ -1,19 +1,33 @@
-const http = require("http");
-require('dotenv').config();
-require("./dbConnection").connect();
-const express = require('express');
-const User = require("./models/User");
+import express from "express";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+import cors from "cors";
+import userRoute from "./routes/user_route.js";
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
-app.get("/", (req,res) => {
-    res.send("<h1>Server is working</h1>")
+dotenv.config();
+
+const PORT = process.env.PORT || 5000;
+const URI = process.env.ATLAS_URI;
+try{
+    mongoose.connect(URI);
+    console.log("Connected to mongoDB");
+} catch(error){
+    console.log("Error: ", error);
+}
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
 })
 
-const PORT = process.env.PORT || 7000;
-const server = http.createServer(app);
+//defining routes
+app.use("/user",userRoute);
 
-server.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+
+app.listen(PORT, () => {
+  console.log(`Example app listening on port ${PORT}`)
 })
+
