@@ -5,6 +5,12 @@ import Navbar from "./Navbar";
 const HomePage = () => {
   return (
     <div className="home">
+      {/* Hero Section */}
+      <div className="hero">
+        <h1>Experience the Best Campsite Booking</h1>
+        <p>Find the perfect getaway for your adventure.</p>
+      </div>
+
       <h1>Campsite Booking</h1>
       <div className="search-section">
         <input type="text" placeholder="Where you're staying?" />
@@ -40,7 +46,41 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <Navbar />
+      {/* Activities Section */}
+      <div className="activities">
+        <h2>Popular Activities</h2>
+        <div className="activity-cards">
+          <div className="card">
+            <div className="card-content">
+              <img src="/images/hiking.jpg" alt="Hiking" />
+              <h3>Hiking</h3>
+              <p>Explore beautiful trails and breathtaking views.</p>
+            </div>
+          </div>
+          <div className="card">
+            <img src="/images/canoeing.jpg" alt="Canoeing" />
+            <div className="card-content">
+              <h3>Canoeing</h3>
+              <p>Paddle through serene lakes and rivers.</p>
+            </div>
+          </div>
+          <div className="card">
+            <img src="/images/campfire.jpg" alt="Campfire Nights" />
+            <div className="card-content">
+              <h3>Campfire Nights</h3>
+              <p>Enjoy warm fires and storytelling under the stars.</p>
+            </div>
+          </div>
+          <div className="card">
+            <img src="/images/fishing.jpg" alt="Fishing" />
+            <div className="card-content">
+              <h3>Fishing</h3>
+              <p>Relax and catch fresh fish in scenic locations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <Navbar /> */}
     </div>
   );
 };
