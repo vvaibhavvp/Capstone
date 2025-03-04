@@ -10,6 +10,8 @@ import { useAuth } from "./context/AuthProvider.js";
 import Logout from "./components/Logout.js";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/footer";
+import ForgotPasswordPage from "./components/ForgotPasswordPage.js";
+import ResetPasswordPage from "./components/ResetPasswordPage.js";
 
 function App() {
   const [authUser, setAuthUser] = useAuth();
@@ -28,6 +30,8 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/signup" element={<SignupPage />} />
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+          <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
         </Routes>
         <Footer />
       </Router>

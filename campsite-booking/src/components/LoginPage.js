@@ -10,7 +10,7 @@ const LoginPage = () => {
     const [formData, setFormData] = useState({
         email: "",
         password: "",
-        confirmPassword: "",
+        // confirmPassword: "",
     });
 
     const handleChange = (e) => {
@@ -20,10 +20,10 @@ const LoginPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault(); // Prevent default form submission
 
-        if (formData.password !== formData.confirmPassword) {
-            toast.error("Passwords do not match!");
-            return;
-        }
+        // if (formData.password !== formData.confirmPassword) {
+        //     toast.error("Passwords do not match!");
+        //     return;
+        // }
 
         const userInfo = {
             email: formData.email,
@@ -56,9 +56,15 @@ const LoginPage = () => {
                 <form onSubmit={handleSubmit}>
                     <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
                     <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
-                    <input type="password" name="confirmPassword" placeholder="Confirm Password" value={formData.confirmPassword} onChange={handleChange} required />
+                    {/* <input type="password" name="confirmPassword" placeholder="Confirm Password" value={formData.confirmPassword} onChange={handleChange} required /> */}
                     <button type="submit">Login</button>
                 </form>
+                {/* Add the Forgot Password link here */}
+                <div>
+                    <p>
+                        <a href="/forgot-password">Forgot Password?</a>
+                    </p>
+                </div>
             </div>
         </div>
     );

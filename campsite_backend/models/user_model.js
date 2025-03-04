@@ -23,6 +23,15 @@ const UserSchema = new Schema({
     createdAt: {
         type: Date,
         default: Date.now
+    },
+
+    resetToken: {  // 🔹 New Field for Forgot Password
+        type: String,
+        default: null
+    },
+    resetTokenExpiry: {  // 🔹 New Field for Token Expiry
+        type: Date,
+        default: null
     }
 });
 

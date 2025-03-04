@@ -11,7 +11,7 @@ const SignupPage = () => {
         username: "",
         email: "",
         password: "",
-        confirmPassword: "",
+        // confirmPassword: "",
     });
 
     const handleChange = (e) => {
@@ -43,10 +43,10 @@ const SignupPage = () => {
             return;
         }
 
-        if (formData.password !== formData.confirmPassword) {
-            toast.error("Passwords do not match!");
-            return;
-        }
+        // if (formData.password !== formData.confirmPassword) {
+        //     toast.error("Passwords do not match!");
+        //     return;
+        // }
 
         const userInfo = {
             username: formData.username,
@@ -76,7 +76,7 @@ const SignupPage = () => {
                     <input type="text" name="username" placeholder="Full Name" value={formData.username} onChange={handleChange} required />
                     <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
                     <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
-                    <input type="password" name="confirmPassword" placeholder="Confirm Password" value={formData.confirmPassword} onChange={handleChange} required />
+                    {/* <input type="password" name="confirmPassword" placeholder="Confirm Password" value={formData.confirmPassword} onChange={handleChange} required /> */}
                     <button type="submit">Sign Up</button>
                 </form>
             </div>
